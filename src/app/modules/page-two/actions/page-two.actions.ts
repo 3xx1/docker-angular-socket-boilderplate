@@ -2,7 +2,7 @@
 
 import { Action } from '@ngrx/store';
 
-export const UPDATE_VALUE = '[page-one] Update Value';
+export const UPDATE_VALUE = '[page-two] Update Value';
 
 /**
  * INCREMENT

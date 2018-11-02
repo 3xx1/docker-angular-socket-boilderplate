@@ -32,13 +32,18 @@ export class PageOneContainer {
     this.dataPageOne.subscribe(data => {
       this.valuePageOne = data.pageOne.value;
     });
+
+    this.dataPageTwo = this.store.select('PageTwoState');
+    this.dataPageTwo.subscribe(data => {
+      this.valuePageTwo = data.pageTwo.value;
+    });
   }
 
   increment() {
-    this.store.dispatch( new PageOneActions.Increment() );
+    this.socketClientService.globalActionDispatcher( new PageOneActions.Increment() );
   }
 
   decrement() {
-    this.store.dispatch( new PageOneActions.Decrement() );
+    this.socketClientService.globalActionDispatcher( new PageOneActions.Decrement() );
   }
 }

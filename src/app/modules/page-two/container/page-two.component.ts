@@ -28,6 +28,11 @@ export class PageTwoContainer {
     private store: Store<any>,
     private socketClientService: SocketClientService
   ) {
+    this.dataPageOne = this.store.select('PageOneState');
+    this.dataPageOne.subscribe(data => {
+      this.valuePageOne = data.pageOne.value;
+    });
+
     this.dataPageTwo = this.store.select('PageTwoState');
     this.dataPageTwo.subscribe(data => {
       this.valuePageTwo = data.pageTwo.value;
@@ -35,6 +40,6 @@ export class PageTwoContainer {
   }
 
   sliderValueChange($event: any) {
-    this.store.dispatch( new PageTwoActions.UpdateValue( $event ) );
+    this.socketClientService.globalActionDispatcher( new PageTwoActions.UpdateValue( $event ) );
   }
 }

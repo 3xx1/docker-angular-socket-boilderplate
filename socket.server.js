@@ -12,11 +12,7 @@ io.on('connection', function(socket) {
   // Client Connection Acq
   console.log('[socket-server] A User Connected.');
 
-  // Updating States
-  socket.on('states.update', function(msg) {
-    io.emit('states.update', msg);
-  });
-
+  // Remote Action Dispatcher
   socket.on('action.dispatch', function(msg) {
     socket.broadcast.emit('action.dispatch', msg);
   });
