@@ -1,22 +1,35 @@
 // Define actions for cluster UI module here
 
-// import { Action } from '@ngrx/store';
-//
-// export const STATE_UPDATE_ALL = '[cluster] StateUpdateAll';
-//
-// /**
-//  * STATE_UPDATE
-//  * @class StateUpdate
-//  * @implements {Action}
-//  */
-// export class StateUpdateAll implements Action {
-//   readonly type = STATE_UPDATE_ALL;
-//   constructor(public payload: any) {}
-// }
-//
-// /**
-//  * Actions type
-//  * @type {Actions}
-//  */
-// export type Actions
-//   = StateUpdateAll;
+import { Action } from '@ngrx/store';
+
+export const INCREMENT = '[page-one] Increment';
+export const DECREMENT = '[page-one] Decrement';
+
+/**
+ * INCREMENT
+ * @class Increment
+ * @implements {Action}
+ */
+export class Increment implements Action {
+  readonly type = INCREMENT;
+  constructor() {}
+}
+
+/**
+ * DECREMENT
+ * @class Decrement
+ * @implements {Action}
+ */
+export class Decrement implements Action {
+  readonly type = DECREMENT;
+  constructor() {}
+}
+
+
+/**
+ * Actions type
+ * @type {Actions}
+ */
+export type Actions
+  = Increment
+  | Decrement;

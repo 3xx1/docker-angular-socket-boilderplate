@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 /* States */
 import { StoreModule } from '@ngrx/store';
-// import { reducers } from './page-one.reducer';
+import { reducers } from './page-one.reducer';
 
 /* Modules */
 import { SharedModule } from '../../shared/shared.module';
@@ -25,7 +25,7 @@ const components = [
 @NgModule({
   imports: [
     RouterModule.forChild(routes),
-    // StoreModule.forFeature('PageOneState', reducers),
+    StoreModule.forFeature('PageOneState', reducers),
     SharedModule
   ],
   providers: [],

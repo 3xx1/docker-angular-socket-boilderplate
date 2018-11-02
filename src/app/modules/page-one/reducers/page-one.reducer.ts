@@ -1,19 +1,28 @@
-// import * as ClusterActions from '../actions/cluster.actions';
-//
-// export interface State {
-//
-// }
-//
-// const initialState: State = {
-//
-// };
-//
-// export function reducer(state: State = initialState, action: ClusterActions.Actions): State {
-//   switch (action.type) {
-//     // case ClusterActions.STATE_UPDATE_ALL:
-//     //   return action.payload.cluster;
-//     //
-//     // default:
-//     //   return state;
-//   }
-// }
+import * as PageOneActions from '../actions/page-one.actions';
+
+export interface State {
+  value: number
+}
+
+const initialState: State = {
+  value: 0
+};
+
+export function reducer(state: State = initialState, action: PageOneActions.Actions): State {
+  switch (action.type) {
+    case PageOneActions.INCREMENT:
+      return {
+        ...state,
+        value: state.value + 1
+      };
+
+    case PageOneActions.DECREMENT:
+      return {
+        ...state,
+        value: state.value - 1
+      };
+
+    default:
+      return state;
+  }
+}
