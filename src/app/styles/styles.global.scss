@@ -1,0 +1,11 @@
+// import variables
+@import 'global/_colors';
+
+// import global styles
+@import 'global/typography';
+@import 'global/forms';
+
+body {
+  margin: 0;
+  background: $black;
+}
