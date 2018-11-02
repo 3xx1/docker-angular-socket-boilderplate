@@ -18,6 +18,9 @@ bash:
 dev:
 	docker run --rm --name $(DOCKER_CONTAINER_NAME) -i -t $(DOCKER_PORTS) -v "$(shell pwd)$(DOCKER_MAPPED_VOLUMES)" $(DOCKER_ENV) $(DOCKER_NAMESPACE)/$(DOCKER_REPOSITORY):$(DOCKER_IMAGE_VERSION) /bin/bash -c "npm install && npm run socket-serve && npm start"
 
+export:
+	make build && ./export-image.sh latest.tar.zip
+
 shell:
 	docker run --rm --name $(DOCKER_CONTAINER_NAME) -i -t $(DOCKER_PORTS) -v "$(shell pwd)$(DOCKER_MAPPED_VOLUMES)" $(DOCKER_ENV) $(DOCKER_NAMESPACE)/$(DOCKER_REPOSITORY):$(DOCKER_IMAGE_VERSION) /bin/bash
 
