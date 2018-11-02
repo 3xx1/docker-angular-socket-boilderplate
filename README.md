@@ -50,6 +50,7 @@ The following commands are available OUTSIDE of the container. They are meant to
 - `shell` Starts your container and automatically logs into it via SSH.
 - `bash` Attaches to an already running container and opens an additional terminal session.
 - `dev` Spins up a container and automatically runs NPM install and starts the Angular CLI dev server on port 4200.
+- `export` Runs `make build` task first to build a docker image and exports it as a compressed file. In order to run this command, you will need to give `export-image.sh` an executable flag. `sudo chmod -x export-image.sh`.
 - `start` Runs the container in daemon mode (for Production) - it will run in the background and you can attach to it at any time.
 - `restart` Starts a stopped container.
 - `stop` Stops the running container.
