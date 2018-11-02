@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 // Modules
 import { SharedModule } from './shared/shared.module';
 import { PageOneModule } from './modules/page-one/page-one.module';
+import { PageTwoModule } from './modules/page-two/page-two.module';
 
 // Devtools/Debugging
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -40,7 +41,8 @@ import { SocketClientService } from './services/socket-client.service';
     }),
     StoreRouterConnectingModule,
     SharedModule,
-    PageOneModule
+    PageOneModule,
+    PageTwoModule
   ],
   providers: [
     SocketClientService

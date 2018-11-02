@@ -1,0 +1,12 @@
+<div id="page-two-container">
+  <h2 class="margin-bottom">Page 2</h2>
+  <div class="margin-bottom">
+    <p>val_2: {{ valuePageTwo }}</p>
+  </div>
+  <div class="margin-bottom">
+    <slider-component
+      [value]="valuePageTwo"
+      (valueChange)="sliderValueChange($event)">
+    </slider-component>
+  </div>
+</div>
